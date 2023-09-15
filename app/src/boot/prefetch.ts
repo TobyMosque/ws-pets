@@ -1,18 +1,18 @@
 import { boot } from 'quasar/wrappers'
-import { isFetchEnabledKey } from 'src/composables/fetch'
+import { isFetchEnabledKey } from 'src/composables/prefetch'
 import { ref } from 'vue'
 
 // "async" is optional;
 // more info on params: https://v2.quasar.dev/quasar-cli/boot-files
-export default boot(({ router, app }) => {
+export default boot(({ app, router }) => {
   const isFetchEnabled = ref(process.env.MODE !== 'ssr' || !!process.env.SERVER)
   app.provide(isFetchEnabledKey, isFetchEnabled)
-  if (!isFetchEnabled.value) {
+
+  if (process.env.MODE === 'ssr' && !!process.env.CLIENT) {
     router.isReady().then(() => {
-      const cancel = router.beforeEach(() => {
+      setTimeout(() => {
         isFetchEnabled.value = true
-        cancel()
-      })
+      }, 0)
     })
   }
 })

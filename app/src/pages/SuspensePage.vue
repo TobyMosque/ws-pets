@@ -5,12 +5,7 @@
         <q-btn color="primary" label="Home" to="/"></q-btn>
       </q-card-actions>
       <q-card-section>
-        <suspense>
-          <suspense-page-async></suspense-page-async>
-          <template v-if="isFetchEnabled" #fallback>
-            <suspense-page-fallback></suspense-page-fallback>
-          </template>
-        </suspense>
+        <suspense-page></suspense-page>
       </q-card-section>
     </q-card>
   </q-page>
@@ -18,10 +13,7 @@
 
 <script setup lang="ts">
 import { createSuspenseState } from 'src/composables/pets'
-import SuspensePageAsync from './SuspensePageAsync.vue'
-import SuspensePageFallback from './SuspensePageFallback.vue'
-import { useIsFetchEnabled } from 'src/composables/fetch'
+import SuspensePage from 'components/Suspense/Page.vue'
 
-const isFetchEnabled = useIsFetchEnabled()
 createSuspenseState()
 </script>

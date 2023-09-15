@@ -7,13 +7,13 @@
 import { useSuspenseState } from 'src/composables/pets'
 import { storeToRefs } from 'pinia'
 import { usePetsStore } from 'src/stores/pet'
-import { useFetch } from 'src/composables/fetch'
+import { usePreFetch } from 'src/composables/prefetch'
 
 const petsStore = usePetsStore()
 const { pets } = storeToRefs(petsStore)
 const { fetchPets } = petsStore
 
-await useFetch(() => fetchPets(2000))
+await usePreFetch(() => fetchPets(2000))
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const { columns } = useSuspenseState()!
 </script>
