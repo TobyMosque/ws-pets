@@ -8,7 +8,8 @@ const routes: RouteRecordRaw[] = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'mounted', component: () => import('pages/MountedPage.vue') },
       { path: 'prefetch', component: () => import('pages/PreFetchPage.vue') },
-      { path: 'suspense', component: () => import('pages/SuspensePage.vue') }
+      { path: 'suspense', component: () => import('pages/SuspensePage.vue') },
+      { path: 'broken-suspense', component: () => import('pages/BrokenSuspensePage.vue') }
     ]
   },
 

@@ -18,3 +18,4 @@
 [0915/142003.709:ERROR:check.cc(222)] Check failed: false. 
 [0915/142041.877:ERROR:check.cc(222)] Check failed: false. 
 [0915/142116.532:ERROR:check.cc(222)] Check failed: false. 
+[1017/100054.265:ERROR:check.cc(298)] Check failed: false. NOTREACHED log messages are omitted in official builds. Sorry!

@@ -4,6 +4,7 @@
       <q-btn color="primary" label="Mounted Page" to="/mounted"></q-btn>
       <q-btn color="primary" label="PreFetch Page" to="/prefetch"></q-btn>
       <q-btn color="primary" label="Suspense Page" to="/suspense"></q-btn>
+      <q-btn color="primary" label="Broken Suspense Page" to="/broken-suspense"></q-btn>
     </div>
   </q-page>
 </template>
