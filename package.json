@@ -7,8 +7,13 @@
   "scripts": {
     "openapi": "openapi-generator-cli generate -i https://petstore3.swagger.io/api/v3/openapi.json -g typescript-fetch -o ./api --skip-validate-spec --additional-properties=npmName=pets-sdk-api,npmVersion=\"1.0.0\",supportsES6=true",
     "api:build": "yarn workspace pets-sdk-api build",
+    "build": "yarn build:pwa",
+    "build:spa": "yarn workspace app quasar build -m spa",
+    "build:pwa": "yarn workspace app quasar build -m pwa",
+    "build:ssr": "yarn workspace app quasar build -m ssr",
     "dev": "yarn dev:ssr",
     "dev:spa": "yarn workspace app quasar dev -m spa",
+    "dev:pwa": "yarn workspace app quasar dev -m pwa",
     "dev:ssr": "yarn workspace app quasar dev -m ssr",
     "postinstall": "yarn api:build"
   },
